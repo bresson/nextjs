@@ -1,9 +1,9 @@
 import React from 'react'
-import Link from 'next/link'
 import 'isomorphic-fetch'
 import { nextConnect, startClock } from '../store'
 import Dashboard from '../components/dashboard'
-
+import Head from '../components/heading/head'
+import Header from '../components/heading/header'
 
 class App extends React.Component {
   static async getInitialProps ({ store, isServer }) {
@@ -12,21 +12,8 @@ class App extends React.Component {
     return { isServer }
   }
 
-constructor(props){
-    super(props);
-    this.state = { 
-      
-    };
-
-    //this.showAlert = this.showAlert.bind(this);
-
-  }
-
   componentDidMount () {
-    console.log('this props', nextConnect, this.props, this.state)
-   //this.timer = this.props.dispatch(startClock())
    this.timer = this.props.startClock();
-   console.log( 'hello', this.showAlert());
   }
 
   componentWillUnmount () {
@@ -41,8 +28,8 @@ constructor(props){
   render () {
     return (
       <div>
-        {console.log('this inside method', this.showAlert())}
-        <button onClick={ () => this.showAlert()} >Click</button>
+        <Head />
+        <Header />
         <Dashboard title='Index Page' linkTo='/other' />
       </div>
     )
@@ -56,19 +43,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default nextConnect((state) => state, mapDispatchToProps)(App)
-
-// <head title={ this.props.title} />
-// <header />
-// <dashboard>
-//   <panel>
-//     <rejectionForm />
-//   </panel>
-//   <panel>
-//     <calendar />
-//     <score />
-//     <editableRejectionLis>
-//       <rejections />
-//     <editableRejectionList />
-//   </panel>
-// </dashboard>
-// <fooer />
