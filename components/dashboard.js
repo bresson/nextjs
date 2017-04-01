@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Clock from './Clock'
 
 export default connect(state => state)(({ title, linkTo, lastUpdate, light }) => {
+  //console.log('dashboard')
   return (
     <div>
       <h1>{title}</h1>

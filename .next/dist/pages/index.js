@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
 var _regenerator = require('babel-runtime/regenerator');
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
@@ -12,21 +16,17 @@ var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
 var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
 var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _createClass2 = require('babel-runtime/helpers/createClass');
+
+var _createClass3 = _interopRequireDefault(_createClass2);
 
 var _inherits2 = require('babel-runtime/helpers/inherits');
 
@@ -56,44 +56,7 @@ var _jsxFileName = '/Users/KRM-MacBookPro/Copy/_experiments/ericelliot/rejection
 var App = function (_React$Component) {
   (0, _inherits3.default)(App, _React$Component);
 
-  function App() {
-    (0, _classCallCheck3.default)(this, App);
-
-    return (0, _possibleConstructorReturn3.default)(this, (App.__proto__ || (0, _getPrototypeOf2.default)(App)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(App, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      console.log('this props', _store.nextConnect, this.props, this.state);
-      this.timer = this.props.startClock();
-      console.log(this.timer);
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearInterval(this.timer);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement('div', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 27
-        }
-      }, _react2.default.createElement('p', {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 28
-        }
-      }, this.timer, ' !'), _react2.default.createElement(_dashboard2.default, { title: 'Index Page', linkTo: '/other', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        }
-      }));
-    }
-  }], [{
+  (0, _createClass3.default)(App, null, [{
     key: 'getInitialProps',
     value: function () {
       var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(_ref2) {
@@ -123,20 +86,75 @@ var App = function (_React$Component) {
     }()
   }]);
 
+  function App(props) {
+    (0, _classCallCheck3.default)(this, App);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (App.__proto__ || (0, _getPrototypeOf2.default)(App)).call(this, props));
+
+    _this.state = {};
+
+    //this.showAlert = this.showAlert.bind(this);
+
+    return _this;
+  }
+
+  (0, _createClass3.default)(App, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log('this props', _store.nextConnect, this.props, this.state);
+      //this.timer = this.props.dispatch(startClock())
+      this.timer = this.props.startClock();
+      console.log('hello', this.showAlert());
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      clearInterval(this.timer);
+    }
+  }, {
+    key: 'showAlert',
+    value: function showAlert() {
+      console.log(this);
+      console.log(this.props.isServer);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement('div', {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43
+        }
+      }, console.log('this inside method', this.showAlert()), _react2.default.createElement('button', { onClick: function onClick() {
+          return _this2.showAlert();
+        }, __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        }
+      }, 'Click'), _react2.default.createElement(_dashboard2.default, { title: 'Index Page', linkTo: '/other', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46
+        }
+      }));
+    }
+  }]);
+
   return App;
 }(_react2.default.Component);
 
-// function mapDispatchToProps(dispatch) {
-//     return({
-//         startClock: () => {dispatch(startClock)}
-//     })
-// }
+function mapDispatchToProps(dispatch) {
+  return {
+    startClock: function startClock() {
+      dispatch((0, _store.startClock)());
+    }
+  };
+}
 
 exports.default = (0, _store.nextConnect)(function (state) {
   return state;
-}, function (startClock) {
-  return store.dispatch(startClock());
-})(App);
+}, mapDispatchToProps)(App);
 
 // <head title={ this.props.title} />
 // <header />

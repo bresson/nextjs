@@ -29,33 +29,34 @@ exports.default = (0, _reactRedux.connect)(function (state) {
       lastUpdate = _ref.lastUpdate,
       light = _ref.light;
 
+  //console.log('dashboard')
   return _react2.default.createElement('div', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    }
-  }, _react2.default.createElement('h1', {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
     }
-  }, title), _react2.default.createElement(_Clock2.default, { lastUpdate: lastUpdate, light: light, __source: {
+  }, _react2.default.createElement('h1', {
+    __source: {
       fileName: _jsxFileName,
       lineNumber: 9
+    }
+  }, title), _react2.default.createElement(_Clock2.default, { lastUpdate: lastUpdate, light: light, __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
     }
   }), _react2.default.createElement('nav', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     }
   }, _react2.default.createElement(_link2.default, { href: linkTo, __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     }
   }, _react2.default.createElement('a', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     }
   }, 'Navigate'))));
 });
