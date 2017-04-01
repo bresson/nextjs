@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
+    "material-ui": "^0.17.1",
     "next": "^2.0.0",
     "next-connect-redux": "^0.1.2",
     "next-redux-wrapper": "^1.0.0",
