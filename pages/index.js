@@ -12,20 +12,20 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 
-// const muiTheme = getMuiTheme({
-//   palette: {
-//     primary1Color: green500,
-//     primary2Color: green700,
-//     primary3Color: green100,
-//   },
-// }, {
-//   avatar: {
-//     borderColor: null,
-//   },
-//   userAgent: 'all',
-// });
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: green500,
+    primary2Color: green700,
+    primary3Color: green100,
+  },
+}, {
+  avatar: {
+    borderColor: null,
+  },
+  userAgent: 'all',
+});
 
-const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
+//const userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
 
 class App extends React.Component {
   static async getInitialProps ({ store, isServer }) {
