@@ -1,25 +1,24 @@
 import Link from 'next/link'
 import { connect } from 'react-redux'
 import Clock from './Clock'
-import Panel from './panel'
-import Button from 'react-md/lib/Buttons/Button'
+import RejectionForm from './rejection_form'
+import EditableRejectionList from './editable_rejectionlist'
 
 export default connect(state => state)(({ title, linkTo, lastUpdate, light }) => {
   //console.log('dashboard')
   return (
     <div className="hello md-grid">
       <h1>{title}</h1>
-      <Panel>
-    <Button
-      icon
-      tooltipLabel='Close the interactive demo'
-      tooltipDelay={150}
-      tooltipPosition='left'
-    >
-      close
-    </Button>
-      </Panel>
-      <Panel className="md-cell--6" />
+      <RejectionForm />
+      <EditableRejectionList />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <Clock lastUpdate={lastUpdate} light={light} />
       <style jsx>{`
       .hello {
@@ -31,7 +30,7 @@ export default connect(state => state)(({ title, linkTo, lastUpdate, light }) =>
         transition: 100ms ease-in background;
       }
       .hello:hover {
-        background: #ccc;
+        // background: #ccc;
       }
     `}</style>
     </div>

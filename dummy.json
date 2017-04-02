@@ -1,0 +1,17 @@
+{"rejections": [
+{"id": 10011,
+  "askee" : "John De", 
+  "Question" : "Do I get a raise?", 
+  "Response" : "When pigs fly", 
+  "Disposition" : "Fail"},
+{"id": 10012,
+  "askee" : "Je Ed", 
+  "Question" : "Try the escargo", 
+  "Response" : "OK", 
+  "Disposition" : "Pass"},
+{"id": 10011,
+  "askee" : "De So", 
+  "Question" : "Can I borrow your car?", 
+  "Response" : "Give me $1,000,000", 
+  "Disposition" : "Fail"}
+]}
