@@ -7,6 +7,10 @@ import Header from '../components/heading/header'
 
 class App extends React.Component {
   static async getInitialProps ({ store, isServer }) {
+    if (isServer) {
+      console.log('IS SERVER')
+    }
+    console.log('isServer')
     // eslint-disable-next-line no-undef
     store.dispatch({ type: 'TICK', light: !isServer, ts: Date.now() })
     return { isServer }
@@ -21,8 +25,8 @@ class App extends React.Component {
   }
 
   showAlert() {
-    console.log(this)
-    console.log(this.props.isServer)
+    // console.log(this)
+    // console.log(this.props.isServer)
   }
 
   render () {

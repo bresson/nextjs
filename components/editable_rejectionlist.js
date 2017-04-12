@@ -1,7 +1,7 @@
 import myData from '../dummy.json';
 
 export default (props = JSON.parse(myData)) => {
-  console.log(myData.rejections)
+  // console.log(myData.rejections)
   const mapPropsToDOM = rejections => {
     return rejections.map(rejection => (
       <div className="rejection">
