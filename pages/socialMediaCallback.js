@@ -1,0 +1,1 @@
+export default () => <div> My User page. Will use as callback page for social media authentication </div>
